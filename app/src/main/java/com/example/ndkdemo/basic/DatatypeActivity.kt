@@ -12,8 +12,17 @@ class DatatypeActivity : AppCompatActivity() {
         initData()
     }
 
-    private fun initData() {
+    companion object {
+        // Used to load the 'native-lib' library on application startup.
+        init {
+            System.loadLibrary("native-lib")
+        }
+    }
 
+    private fun initData() {
+        dataType(true,1,'r',2,5L,0.32,2.56f,8,"str", arrayOf("str1","str2","str3"),
+            User(10021,"姓名","13200000000","ahud24254")
+        )
     }
 
     external fun dataType(
