@@ -1,11 +1,12 @@
 package com.example.ndkdemo.basic
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ndkdemo.R
 import com.example.ndkdemo.bean.User
 
-class DatatypeActivity : AppCompatActivity() {
+class DatatypeActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_datatype)
@@ -38,4 +39,8 @@ class DatatypeActivity : AppCompatActivity() {
         mStrs:Array<String>,
         mUser:User
     )
+
+    override fun onClick(p0: View?) {
+        initData()
+    }
 }
